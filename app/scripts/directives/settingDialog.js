@@ -4,7 +4,7 @@
     angular.module('ariaNg').directive('ngSettingDialog', ['ariaNgLocalizationService', 'aria2SettingService', function (ariaNgLocalizationService, aria2SettingService) {
         return {
             restrict: 'E',
-            templateUrl: 'views/setting-dialog.html',
+            templateUrl: 'scripts/directives/setting-dialog.html',
             replace: true,
             scope: {
                 setting: '='

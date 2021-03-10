@@ -20,4 +20,4 @@ var ariaNg = angular.module('ariaNg', [
     'angular-clipboard',
     'inputDropdown',
     angularDragula(angular)
-]);
+])

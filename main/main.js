@@ -30,7 +30,8 @@ function isEnableCloseToHide() {
 global.settings = {
     version: pkgfile.version,
     ariaNgVersion: pkgfile["ariang-version"],
-    isDevMode: cmd.argv.development,
+    isDevMode: true,
+    // isDevMode: cmd.argv.development,
     useCustomAppTitle: false
 };
 

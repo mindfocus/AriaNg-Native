@@ -6,7 +6,8 @@
         $scope.currentLog = null;
 
         $scope.enableDebugMode = function () {
-            return ariaNgSettingService.isEnableDebugMode();
+            return true;
+            // return ariaNgSettingService.isEnableDebugMode();
         };
 
         $scope.reloadLogs = function () {

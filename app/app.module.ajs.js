@@ -1,5 +1,4 @@
 'use strict';
-
 var ariaNg = angular.module('ariaNg', [
     'ngRoute',
     'ngSanitize',
@@ -21,3 +20,4 @@ var ariaNg = angular.module('ariaNg', [
     'inputDropdown',
     angularDragula(angular)
 ]);
+//# sourceMappingURL=app.module.ajs.js.map

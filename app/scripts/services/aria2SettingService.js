@@ -212,7 +212,7 @@
                     }
                 }
 
-                ariaNgStorageService.set(storageKey, newHistory);
+                ariaNgStorageService.set(storageKey, JSON.stringify(newHistory));
 
                 return newHistory;
             },

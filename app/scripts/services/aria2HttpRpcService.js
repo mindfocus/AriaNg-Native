@@ -4,7 +4,7 @@
     angular.module('ariaNg').factory('aria2HttpRpcService', ['$http', 'ariaNgCommonService', 'ariaNgSettingService', 'ariaNgLogService', function ($http, ariaNgCommonService, ariaNgSettingService, ariaNgLogService) {
         var rpcUrl = ariaNgSettingService.getCurrentRpcUrl();
         var method = ariaNgSettingService.getCurrentRpcHttpMethod();
-
+        console.log('rpcUrl:', rpcUrl)
         var getUrlWithQueryString = function (url, parameters) {
             if (!url || url.length < 1) {
                 return url;

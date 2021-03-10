@@ -4,7 +4,7 @@
     angular.module('ariaNg').directive('ngSetting', ['$timeout', '$q', 'ariaNgConstants', 'ariaNgLocalizationService', 'aria2SettingService', function ($timeout, $q, ariaNgConstants, ariaNgLocalizationService, aria2SettingService) {
         return {
             restrict: 'E',
-            templateUrl: 'views/setting.html',
+            templateUrl: 'scripts/controllers/setting.html',
             require: '?ngModel',
             replace: true,
             scope: {

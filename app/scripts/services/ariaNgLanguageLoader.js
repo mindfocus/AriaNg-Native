@@ -121,7 +121,7 @@
 
             if (ariaNgAssetsCacheService.getLanguageAsset(options.key)) {
                 var languageObject = getLanguageObject(ariaNgAssetsCacheService.getLanguageAsset(options.key));
-                ariaNgStorageService.set(languageKey, languageObject);
+                ariaNgStorageService.set(languageKey, JSON.stringify(languageObject));
                 deferred.resolve(languageObject);
 
                 return deferred.promise;
@@ -152,7 +152,7 @@
                     languageUpdated = !isLanguageResourceEquals(languageResource, languageObject);
                 }
 
-                ariaNgStorageService.set(languageKey, languageObject);
+                ariaNgStorageService.set(languageKey, JSON.stringify(languageObject));
 
                 if (languageUpdated) {
                     ariaNgLogService.info("[ariaNgLanguageLoader] load language resource successfully, and resource is updated");

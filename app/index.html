@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ariaNg">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="styles/theme/default.css">
     <link rel="stylesheet" href="styles/theme/default-dark.css">
     <link rel="stylesheet" href="styles/theme/default-app-title.css">
+
 </head>
 <body class="hold-transition skin-aria-ng sidebar-mini fixed ng-cloak" ng-class="{'custom-app-title': useCustomAppTitle}">
 <div id="dropzone" class="dropzone">
@@ -108,6 +109,7 @@
                         <a class="toolbar" title="{{'New' | translate}}" ng-href="#!/new">
                             <i class="fa fa-plus"></i>
                             <span translate>New</span>
+
                         </a>
                     </li>
                     <li class="divider"></li>
@@ -234,6 +236,7 @@
                 <li data-href-match="/settings/ariang">
                     <a href="#!/settings/ariang"><i class="fa fa-cog"></i> <span translate>AriaNg Settings</span></a>
                 </li>
+                <hello-component></hello-component>
                 <li class="treeview">
                     <a href="javascript:void(0);">
                         <i class="fa fa-cogs"></i>
@@ -337,16 +340,11 @@
         delete window.module;
     }
 </script>
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../node_modules/angular/angular.min.js"></script>
-<script src="../node_modules/angular-route/angular-route.min.js"></script>
-<script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
-<script src="../node_modules/angular-touch/angular-touch.min.js"></script>
-<script src="../node_modules/angular-messages/angular-messages.min.js"></script>
-<script src="../node_modules/angular-cookies/angular-cookies.min.js"></script>
-<script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="../node_modules/angular/angular.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../node_modules/moment/min/moment.min.js"></script>
+<script src="../node_modules/moment/moment.js"></script>
 <script src="../node_modules/moment/locale/zh-cn.js"></script>
 <script src="../node_modules/moment/locale/zh-tw.js"></script>
 <script src="../node_modules/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
@@ -356,9 +354,15 @@
 <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../node_modules/bootstrap-contextmenu/bootstrap-contextmenu.js"></script>
 <script src="../node_modules/natural-compare/index.js"></script>
-<script src="../node_modules/angular-translate/dist/angular-translate.min.js"></script>
-<script src="../node_modules/angular-moment/angular-moment.min.js"></script>
-<script src="../node_modules/angular-websocket/dist/angular-websocket.min.js"></script>
+<script src="../node_modules/angular-route/angular-route.js"></script>
+<script src="../node_modules/angular-sanitize/angular-sanitize.js"></script>
+<script src="../node_modules/angular-touch/angular-touch.js"></script>
+<script src="../node_modules/angular-messages/angular-messages.js"></script>
+<script src="../node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-translate/dist/angular-translate.js"></script>
+<script src="../node_modules/angular-moment/angular-moment.js"></script>
+<script src="../node_modules/angular-websocket/dist/angular-websocket.js"></script>
 <script src="../node_modules/angular-utf8-base64/angular-utf8-base64.js"></script>
 <script src="../node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <script src="../node_modules/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
@@ -369,9 +373,24 @@
 <script src="../node_modules/angular-input-dropdown/inputDropdown.js"></script>
 <script src="../node_modules/angularjs-dragula/dist/angularjs-dragula.min.js"></script>
 <script src="../node_modules/angular-sweetalert/SweetAlert.js"></script>
+
+
+
+<!-- Polyfill(s) for older browsers -->
+
+<script src="../node_modules/core-js/client/shim.min.js"></script>
+
+<script src="../node_modules/zone.js/dist/zone.js"></script>
+<script src="../node_modules/systemjs/dist/system.src.js"></script>
+
+<script src="./systemjs.config.js"></script>
+<script src="./app.module.ajs.js"></script>
+<script>
+    System.import('main.js').catch(function(err){ console.error(err); });
+</script>
+
 <script src="scripts/core/__core.js"></script>
 <script src="scripts/core/__fix.js"></script>
-<script src="scripts/core/app.js"></script>
 <script src="scripts/core/router.js"></script>
 <script src="scripts/core/root.js"></script>
 <script src="scripts/config/constants.js"></script>
@@ -414,21 +433,19 @@
 <script src="scripts/filters/volume.js"></script>
 <script src="scripts/services/ariaNgAssetsCacheService.js"></script>
 <script src="scripts/services/ariaNgLanguageLoader.js"></script>
-<script src="scripts/services/ariaNgCommonService.js"></script>
+<!--<script src="scripts/services/ariaNgCommonService.js"></script>-->
 <script src="scripts/services/ariaNgNotificationService.js"></script>
 <script src="scripts/services/ariaNgLocalizationService.js"></script>
-<script src="scripts/services/ariaNgLogService.js"></script>
-<script src="scripts/services/ariaNgStorageService.js"></script>
 <script src="scripts/services/ariaNgFileService.js"></script>
-<script src="scripts/services/ariaNgSettingService.js"></script>
+<!--<script src="scripts/services/ariaNgSettingService.js"></script>-->
 <script src="scripts/services/ariaNgMonitorService.js"></script>
 <script src="scripts/services/ariaNgTitleService.js"></script>
-<script src="scripts/services/ariaNgVersionService.js"></script>
+<!--<script src="scripts/services/ariaNgVersionService.js"></script>-->
 <script src="scripts/services/aria2HttpRpcService.js"></script>
 <script src="scripts/services/aria2WebSocketRpcService.js"></script>
 <script src="scripts/services/aria2RpcService.js"></script>
 <script src="scripts/services/aria2TaskService.js"></script>
 <script src="scripts/services/aria2SettingService.js"></script>
-<script src="scripts/services/ariaNgNativeElectronService.js"></script>
+<!--<script src="scripts/services/ariaNgNativeElectronService.js"></script>-->
 </body>
 </html>
